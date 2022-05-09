@@ -12,7 +12,7 @@ this will generate a new generator file inside the lib folder.
 ```
 alias generator="/Users/userName/packages/generator/lib/generator"
 ```
-now you can use command line directly from you tirmnal 
+now you can use command line directly from your terminal 
 
 # Usage:
 
@@ -20,7 +20,7 @@ now you can use command line directly from you tirmnal
 ```
 generator make factory --name UserFactory
 ```
-this will generate ```user_factory.dart``` file inside ```data/factories directory```
+this will generate ```user_factory.dart``` file inside ```data/factories``` directory
 
 ``` dart
 import 'package:famcare/auth/models/user.dart';
