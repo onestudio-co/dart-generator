@@ -8,7 +8,7 @@ dart compile exe main.dart -o generator
 ```
 this will generate a new generator file inside the lib folder.
 
-2- create alias inside you ```.bash_profile``` and ```.zshrc``` files 
+2- create alias inside your ```.bash_profile``` and ```.zshrc``` files 
 ```
 alias generator="/Users/userName/packages/generator/lib/generator"
 ```
