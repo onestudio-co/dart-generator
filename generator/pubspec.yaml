@@ -1,0 +1,40 @@
+name: generator
+version: 1.0.0
+description:  A new dart package.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  analyzer: ^4.0.0
+  build: ^2.3.0
+  source_gen: ^1.2.2
+  meta: ^1.4.0
+  code_builder: ^4.1.0
+  dart_style: ^2.0.0
+  http: ^0.13.4
+
+dev_dependencies:
+  dcli: ^1.30.2
+  yaml: ^3.1.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
