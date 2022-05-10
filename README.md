@@ -120,8 +120,8 @@ name: emotions_tracker
 
 
 data:
-  base_url: backend-develop.famcare.app
-  headers: { Authorization: Bearer 2545|XTiItBo8ayOuSTZgwQ1hSMApvOhOhhAblj6o39lk,
+  base_url: ***.***.app
+  headers: { Authorization: Bearer ******,
              Content-Type: application/json }
   apis:
     - name: getEmotions
