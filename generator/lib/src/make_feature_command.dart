@@ -46,7 +46,7 @@ class MakeFeatureCommand extends Command<Future<void>> {
     }
 
     final directory = Directory.current.getLibDirectory();
-    if (directory == null) {
+    if (!directory.existsSync()) {
       throw Exception('invalid dart project');
     }
 

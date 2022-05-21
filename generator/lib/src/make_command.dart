@@ -1,5 +1,6 @@
 import 'package:args/command_runner.dart';
 
+import 'make_event_command.dart';
 import 'make_factory_command.dart';
 import 'make_feature_command.dart';
 
@@ -13,5 +14,6 @@ class MakeCommand extends Command {
   MakeCommand() {
     addSubcommand(MakeFactoryCommand());
     addSubcommand(MakeFeatureCommand());
+    addSubcommand(MakeEventCommand());
   }
 }

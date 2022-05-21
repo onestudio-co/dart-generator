@@ -6,7 +6,7 @@ import 'package:yaml/yaml.dart';
 extension DirectoryUtils on Directory {
   String relativeTo(File targetedFile) {
     return relative(targetedFile.path,
-        from: Directory.current.getLibDirectory()?.path);
+        from: Directory.current.getLibDirectory().path);
   }
 
   Future<String?> getProjectName() async {
@@ -26,7 +26,7 @@ extension DirectoryUtils on Directory {
     return mapData['name'];
   }
 
-  Directory? getLibDirectory() {
+  Directory getLibDirectory() {
     return Directory(path + '/lib');
   }
 

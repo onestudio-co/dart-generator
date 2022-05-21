@@ -23,7 +23,7 @@ class EventsGenerator {
       final eventFile = directory.search(eventFileName);
       if (eventFile == null) {
         print(yellow(
-            'Start Generating File $eventFileName For ${event.name} 👀'));
+            'Start Generating File $eventFileName For ${event.name} Event 👀'));
         final repositoryClass = EventCodeBuilder.generateEvent(
             eventFileName.replaceAll('.dart', '').fromSnakeCaseToPascalCase,
             event);

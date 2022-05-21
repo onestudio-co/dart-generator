@@ -18,6 +18,9 @@ class MakeFactoryCommand extends Command<Future<void>> {
     argParser.addOption(
       'name',
       abbr: 'f',
+      help: 'the name of the model leading with Factory keyword for example'
+          ' UserFactory or DiagnosesResultFactory and you can pass the model name'
+          ' directly without factory keyword like User or Diagnosis result',
       mandatory: true,
     );
   }
@@ -34,7 +37,7 @@ class MakeFactoryCommand extends Command<Future<void>> {
     }
 
     final directory = Directory.current.getLibDirectory();
-    if (directory == null) {
+    if (!directory.existsSync()) {
       throw Exception('invalid dart project');
     }
 
