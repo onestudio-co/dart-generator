@@ -2,13 +2,15 @@ import '../factory_visitor.dart';
 
 String create(DartClass dartClass) {
   final className = dartClass.name;
-  final variableName = 'm${dartClass.name}';
+  final createMethodName = 'create$className';
   return '''
-  final $variableName = $className(${dartClass.allDefaultClassFields});
+    $createMethodName() {
+     return $className(${dartClass.allDefaultClassFields});
+   }
   if (_count != null) {
-    return List<$className>.filled(_count!, $variableName);
+    return List<$className>.filled(_count!, $createMethodName());
   } else {
-    return $variableName;
+    return $createMethodName();
   }
 ''';
 }
