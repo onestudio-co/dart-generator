@@ -4,13 +4,21 @@ import 'package:analyzer/dart/ast/visitor.dart';
 import '../helpers/helpers.dart';
 
 typedef DartClassFinder = DartClass? Function(
-    FactoryVisitor visitor, String model);
+    FactoryVisitor visitor, String model, bool ignoreImport);
 
 class FactoryVisitor extends RecursiveAstVisitor<void> {
   final DartClassFinder? getDartClass;
   final dartClass = DartClass();
 
   FactoryVisitor({this.getDartClass});
+
+  @override
+  void visitExtendsClause(ExtendsClause node) {
+    super.visitExtendsClause(node);
+    final parentDartClass =
+        getDartClass?.call(this, node.superclass.name.name, true);
+    dartClass.fields.addAll(parentDartClass?.fields ?? []);
+  }
 
   @override
   void visitClassDeclaration(ClassDeclaration node) {
@@ -52,6 +60,7 @@ class FactoryVisitor extends RecursiveAstVisitor<void> {
           dartClass: getDartClass?.call(
             this,
             typeArguments.isNotEmpty ? typeArguments.first : type,
+            false,
           ),
         ),
       );

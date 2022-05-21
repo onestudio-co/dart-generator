@@ -45,15 +45,18 @@ class FactoryGenerator {
     String projectName,
     List<File> otherRelatedFiles,
   ) {
-    return (FactoryVisitor mainVisitor, String type) {
+    return (FactoryVisitor mainVisitor, String type, bool ignoreImport) {
       if (type.isNonPreemptive) {
         final input = type.toSnakeCase() + '.dart';
         final targetedFile = otherRelatedFiles.firstWhereOrNull(
           (element) => element.path.endsWith(input),
         );
         if (targetedFile != null) {
-          mainVisitor.dartClass.imports.add(
-              'package:${projectName}/${Directory.current.relativeTo(targetedFile)}');
+          if (!ignoreImport) {
+            mainVisitor.dartClass.imports.add(
+                'package:${projectName}/${Directory.current.relativeTo(
+                    targetedFile)}');
+          }
           final innerAst = parseFile(
             path: targetedFile.path,
             featureSet: FeatureSet.latestLanguageVersion(),
