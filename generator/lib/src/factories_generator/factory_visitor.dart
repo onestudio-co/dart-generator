@@ -84,7 +84,7 @@ class FactoryVisitor extends RecursiveAstVisitor<void> {
         return '${typeArguments.first}Factory().count(10).create()';
       }
     } else if (type == 'int') {
-      return 'faker.randomGenerator.integer(2)';
+      return 'faker.randomGenerator.integer(23)';
     } else if (type == 'double') {
       return 'faker.randomGenerator.decimal()';
     } else if (type == 'bool') {
