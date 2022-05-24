@@ -8,7 +8,7 @@ String create(DartClass dartClass) {
      return $className(${dartClass.allDefaultClassFields});
    }
   if (_count != null) {
-    return List<$className>.filled(_count!, $createMethodName(), growable: true);
+    return List<$className>.generate(_count!, (_)=> $createMethodName(), growable: true);
   } else {
     return $createMethodName();
   }
